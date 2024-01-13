@@ -11,3 +11,10 @@ weights = [[3.9, 0.4, 3.6, 5.8],
            [8.2, 2.5, 5.4, 0.7]]
  
 biases = [2, 3, 0.5]
+                                           #We have to transpose the weights matrix so switch rows and columns so it fits the input matrix
+output = np.dot(weights, np.transpose(input)) + biases
+print(output)
+                  ####  OR  ####
+output1 = np.dot(weights, np.array(input).T) + biases
+print(output1)
+
