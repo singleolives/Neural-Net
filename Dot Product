@@ -1,4 +1,4 @@
-
+             #Shapes/Dot Product
 import sys
 import numpy as np 
 import matplotlib
@@ -25,4 +25,13 @@ print(output1)   #101.20
 
 ########################################################################
            #Now lets apply the dot product to a layer of neurons, like above
+input = [2.6, 1.2, 7.7, 4.1]    
 
+weights = [[3.9, 0.4, 3.6, 5.8],
+           [6.1, 5.0, 7.3, 6.6],       #Here we have 3 neurons
+           [8.2, 2.5, 5.4, 0.7]]
+ 
+biases = [2, 3, 0.5]
+
+output_ = np.dot(weights, input) + biases
+print(output_)      #### [ 64.12 108.13  69.27]
