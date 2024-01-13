@@ -1,1 +1,28 @@
-h
+
+import sys
+import numpy as np 
+import matplotlib
+                            
+input = [2.6, 1.2, 7.7, 4.1]    
+
+weights = [[3.9, 0.4, 3.6, 5.8],
+           [6.1, 5.0, 7.3, 6.6],       #this is a lol, list of lists
+           [8.2, 2.5, 5.4, 0.7]]
+ 
+biases = [2, 3, 0.5]
+
+##############################################################
+        #Lets apply dot product using a single neuron 
+        #a tensor is simply an object that CAN be represented as an array
+
+                                              #First, lets make it simple
+input1 = [4, 3.1, 6.9, 1.1]
+weights1 = [5.4, 4.7, 7.7, 9.0]
+bias1 = 2
+
+output1 = np.dot(input1, weights1) + bias1        #here, it does not matter what order input or weight is
+print(output1)   #101.20
+
+########################################################################
+           #Now lets apply the dot product to a layer of neurons, like above
+
