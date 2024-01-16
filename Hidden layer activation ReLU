@@ -10,17 +10,22 @@ X = [[2.6, 1.2, 7.7, 4.1],
      [7.7, 6.4, 9.2, 8.8]]
 
 
-#Simple ReLU activation
+     #Simple ReLU activation
 inputs = [-3.3, 4.3, 1.1, -4.2, 5.9, -9.0, 7.7, -13.8]
 outputs = []
 
 for i in inputs:
-   if i > 0:
+   if i > 0:                     #Rectified Linear activation Function
       outputs.append(i)
    elif i <= 0:
       outputs.append(0)
+print(outputs)
 
+    ##### OR #####
 
+for i in inputs:
+   outputs.append(max(0, i))
+print(outputs)
 
 
 
