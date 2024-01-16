@@ -13,6 +13,7 @@ X = [[2.6, 1.2, 7.7, 4.1],
 class Layer_Dense:
    def __init(self, n_inputs, n_neurons):                   #number of inputs and neurons, if you print it will give weights
       self.weights = 0.1 * np.random.randn(n_inputs, n_neurons)   #randn is a Gaussian distribution bounded around 0
+      self.biases = np.zeros(1, n_neurons)   #the shape in our biases is 1 by how many neurons we have 
    def forward(self):
       pass
    
