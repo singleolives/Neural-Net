@@ -6,20 +6,27 @@ import matplotlib
 np.random.seed(0)                  
 
 X = [[2.6, 1.2, 7.7, 4.1],           
-         [3.0, 2.0, 4.0, 8.3],
-         [7.7, 6.4, 9.2, 8.8]]
+     [3.0, 2.0, 4.0, 8.3],
+     [7.7, 6.4, 9.2, 8.8]]
                                         #Lets initialize our weights
 
 class Layer_Dense:
-   def __init(self, n_inputs, n_neurons):                   #number of inputs and neurons, if you print it will give weights
+   def __init__(self, n_inputs, n_neurons):                   #number of inputs and neurons, if you print it will give weights
       self.weights = 0.1 * np.random.randn(n_inputs, n_neurons)   #randn is a Gaussian distribution bounded around 0
       self.biases = np.zeros((1, n_neurons))                     #the shape in our biases is 1 by how many neurons we have 
    def forward(self, inputs):
-      self.output = np.dot(inputs * self.weights) + self.biases
+      self.output = np.dot(inputs, self.weights) + self.biases
 
 #########################################################################
           # Now lets pass the forward method
    
-Layer_1 = Layer_Dense(4, 7)               #size of inputs and how many neurons we want to have, neurons can be any # you want
-Layer_2 = Layer_Dense(7, 15)             #Output from Layer_1 will be our input for our Layer_2, neurons can still be your choice
+Layer_1 = Layer_Dense(4, 6)               #size of inputs and how many neurons we want to have, neurons can be any # you want
+Layer_2 = Layer_Dense(6, 3)             #Output from Layer_1 will be our input for our Layer_2, neurons can still be your choice
 
+Layer_1.forward(X)
+print(Layer_1.output)
+
+print("  ")
+
+Layer_2.forward(Layer_1.output)
+print(Layer_2.output)
