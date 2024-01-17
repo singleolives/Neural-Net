@@ -1,13 +1,19 @@
-#
-import sys
+        #ReLU
 import numpy as np 
-import matplotlib
+import nnfs
+from nnfs.datasets import spiral_data
 
-np.random.seed(0)                  
+nnfs.init()    #This sets our random seed and sets a default datatype for numpy to use             
 
 X = [[2.6, 1.2, 7.7, 4.1],           
      [3.0, 2.0, 4.0, 8.3],
      [7.7, 6.4, 9.2, 8.8]]
+
+#lets create data, spiral data function creates both features and labels
+
+X, y = spiral_data(100, 3)   #100 feature sets of 3 classes
+
+
 
 class Layer_Dense:
    def __init__(self, n_inputs, n_neurons):                   
@@ -17,10 +23,12 @@ class Layer_Dense:
       self.output = np.dot(inputs, self.weights) + self.biases
 
 
+     ###Lets make a Rectified Linear Object
+class Activate_ReLU:
+   def forward(self, inputs):
+      self.output = np.maximum(0, inputs)
 
 
-
-      
 
 Layer_1 = Layer_Dense(4, 6)               
 Layer_2 = Layer_Dense(6, 3)             
