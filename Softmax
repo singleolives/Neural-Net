@@ -1,1 +1,15 @@
-hhh
+import math
+
+Layer_outputs = [1.4, 3.6, 2.9]
+
+E = math.e       #Euler's constant,  Using Exponential formula (y = e^x) to get rid of negatives
+
+#Now lets exponentiate all the values
+
+exp_values = []
+
+for output in Layer_outputs:
+   exp_values.append(E**output)
+
+print(exp_values)
+
