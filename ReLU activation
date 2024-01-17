@@ -29,12 +29,10 @@ class Activate_ReLU:
       self.output = np.maximum(0, inputs)
 
 
-
-Layer_1 = Layer_Dense(4, 6)               
-Layer_2 = Layer_Dense(6, 3)             
-
+Layer_1 = Layer_Dense(2, 5)  
+activation1 = Activate_ReLU()             
+             
 Layer_1.forward(X)
-print(Layer_1.output)
-print("  ")
-Layer_2.forward(Layer_1.output)
-print(Layer_2.output)
+#print(Layer_1.output)                        #The rectified linear function makes it so all negative outputs become 0
+activation1.forward(Layer_1.output)
+print(activation1.output)
