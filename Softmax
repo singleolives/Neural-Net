@@ -26,3 +26,5 @@ print(normalized_values)
 print(sum(normalized_values))         #Gives us our probability distribrution, should add up very close to 1
 
 
+
+
