@@ -13,3 +13,16 @@ for output in Layer_outputs:
 
 print(exp_values)
 
+#####  Now we must normalize the values using Normalization  ####################
+#It is a single output neuron's value divided by the sum of all of the other output neurons in that output layer and this gives us the probability distribution
+
+normalized_base = sum(exp_values)
+normalized_values = []
+
+for value in exp_values:
+   normalized_values.append(value / normalized_base)
+
+print(normalized_values)
+print(sum(normalized_values))         #Gives us our probability distribrution, should add up very close to 1
+
+
