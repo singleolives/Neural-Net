@@ -1,0 +1,16 @@
+      #Softmax pt.3
+import nnfs           
+import numpy as np
+
+nnfs.init()
+
+Layer_outputs = [[1.4, 3.6, 2.9],
+                 [2.5, 9.0, -0.3],
+                 [7.1, -4/5, 1/2]]
+
+exp_values = np.exp(Layer_outputs)
+
+normalized_values = exp_values / np.sum(exp_values, axis = 1, keepdims = True)
+
+print(normalized_values)  #This gives our actual normalized values
+
