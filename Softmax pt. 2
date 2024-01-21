@@ -1,6 +1,7 @@
-       #Softmax pt.2
+ #Softmax pt.2
 import nnfs                  #Softmax function is made up of exponentiation and normalization
 import numpy as np
+
 
 nnfs.init()
 
@@ -15,11 +16,8 @@ Layer_outputs = [[1.4, 3.6, 2.9],
 exp_values = np.exp(Layer_outputs)
 
                             #Pass the axis parameter to get 3 outputs, it performs the sum of columns
-print(np.sum(Layer_outputs, axis = 0))
+                            #keepdims makes output into a matrix
+normalized_values = exp_values / np.sum(exp_values, axis = 1, keepdims = True)
 
+print(normalized_values)  #This gives our actual normalized values
 
-#normalized_values = exp_values / np.sum(exp_values)
-
-#print(normalized_values)
-#print(sum(normalized_values)) 
-       
