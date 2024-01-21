@@ -1,28 +1,25 @@
-       #Softmax
-import math
+       #Softmax pt.2
+import nnfs                  #Softmax function is made up of exponentiation and normalization
+import numpy as np
 
-Layer_outputs = [1.4, 3.6, 2.9]
-                 
+nnfs.init()
 
-E = math.e       #Euler's constant,  Using Exponential formula (y = e^x) to get rid of negatives
+Layer_outputs = [[1.4, 3.6, 2.9],
+                 [2.5, 9.0, -0.3],
+                 [7.1, -4/5, 1/2]]
 
-#Now lets exponentiate all the values
+#Lets convert this to numpy
+#And lets convert this to batch
+       
 
-exp_values = []
+exp_values = np.exp(Layer_outputs)
 
-for output in Layer_outputs:
-   exp_values.append(E**output)
+                            #Pass the axis parameter to get 3 outputs, it performs the sum of columns
+print(np.sum(Layer_outputs, axis = 0))
 
-print(exp_values)
 
-#####Now we must normalize the values using Normalization####################
-#going to be a single output neuron's value divided by the sum of all of the other output neurons in that output layer and this gives us the probability distribution
+#normalized_values = exp_values / np.sum(exp_values)
 
-normalized_base = sum(exp_values)
-normalized_values = []
-
-for value in exp_values:
-   normalized_values.append(value / normalized_base)
-
-print(normalized_values)
-print(sum(normalized_values))         #Gives us our probability distribrution, should add up very close to 1
+#print(normalized_values)
+#print(sum(normalized_values)) 
+       
