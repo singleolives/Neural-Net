@@ -26,12 +26,13 @@ class Activate_Softmax:
       self.output = probabilities
 
 
+Y, z = spiral_data(samples = 155, classes = 3)    #155 samples per class, 3 classes
 
-Layer_1 = Activate_Dense_Layer(2, 5)  
-activation1 = Activate_ReLU()             
-             
-Layer_1.forward(X)
-#print(Layer_1.output)            
-activation1.forward(Layer_1.output)
-print(activation1.output)
+Dense1 = Activate_Dense_Layer(2, 4)
+activate1 = Activate_ReLU()
+
+Dense2 = Activate_Dense_Layer(4, 8)
+activate2 = Activate_Softmax()
+
+
 
