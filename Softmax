@@ -1,8 +1,8 @@
+       #Softmax
 import math
 
-Layer_outputs = [[1.4, 3.9, 2.3],
-                 [-0.3, 5.4, -3.3],
-                 [1.1, -5.0, 0.226]]
+Layer_outputs = [1.4, 3.6, 2.9]
+                 
 
 E = math.e       #Euler's constant,  Using Exponential formula (y = e^x) to get rid of negatives
 
@@ -26,8 +26,4 @@ for value in exp_values:
 
 print(normalized_values)
 print(sum(normalized_values))         #Gives us our probability distribrution, should add up very close to 1
-
-
-
-
 
